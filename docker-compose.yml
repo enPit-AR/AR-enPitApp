@@ -1,0 +1,13 @@
+ version: '3.9'
+ services:
+   enpit-app:
+    container_name: enpit-ar
+    build: .
+    # image: node:18.4.0-alpine
+    volumes:
+       - ./ar-app:/root/enPitAR-App/
+    working_dir: /root/enPitAR-App
+    command: sh -c "npm install && npm start"
+    ports:
+      - "3000:3000"
+    tty: true

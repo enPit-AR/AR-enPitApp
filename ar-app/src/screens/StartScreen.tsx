@@ -16,8 +16,6 @@ const StartScreen = () => {
         <div>
             <div>
                 <h1>ENjoいずむ</h1>
-                <br />
-                スタート画面
             </div>
 
             <div>

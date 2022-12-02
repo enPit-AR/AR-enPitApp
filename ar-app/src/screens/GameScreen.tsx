@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import Camera from "../components/Camera";
 
 const GameScreen = () => {
     const navigate = useNavigate()
@@ -6,6 +7,9 @@ const GameScreen = () => {
         <div>
             <div>
                 <h1>ここはゲーム画面</h1>
+            </div>
+            <div>
+                <Camera/>
             </div>
             <div>
                 <button onClick={() => navigate('/')}>スタート画面へ</button>

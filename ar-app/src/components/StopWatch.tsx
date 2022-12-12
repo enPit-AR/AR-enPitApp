@@ -4,14 +4,14 @@ function StopWatch() {
 
     const { seconds, minutes, isRunning, start, pause, reset } = useStopwatch({ autoStart: true });
     return (
-        <div>
-            <h1>countUp Timer</h1>
-            <div style={styles.countString}>
-                <span>{minutes}</span>:
-                <span>{seconds}</span>
+        <div style={styles.component}>
+            {/* <h1>countUp Timer</h1> */}
+            <div style={styles.timerBox}>
+                <span style={styles.countString}>{minutes}:</span>
+                <span style={styles.countString}>{seconds}</span>
             </div>
-            <p>{isRunning ? "Running..." : "Not running..."}</p>
-            <button
+            {/* <p>{isRunning ? "Running..." : "Not running..."}</p> */}
+            {/* <button
             onClick={reset as unknown as React.MouseEventHandler<HTMLButtonElement>}>
                 Reset
             </button>
@@ -22,14 +22,29 @@ function StopWatch() {
             <button
             onClick={pause as unknown as React.MouseEventHandler<HTMLButtonElement>}>
                 pause
-            </button>
+            </button> */}
         </div>
     );
 };
 
 const styles : {[key: string]: React.CSSProperties} = {
+    component:{
+        padding: 10,
+        margin: 5,
+        width: "fit-content",
+        border: "solid",
+        borderRadius:1000
+    },
+    timerBox:{
+        // width: "fit-content",
+        // border: "solid",
+        // borderWidth: 2,
+        // borderRadius: 15,
+    },
     countString:{
-        fontSize: 100,
+        fontSize: 30,
+        fontWeight:10,
+        fontFamily:"fantasy",
     },
 }
 export default StopWatch;

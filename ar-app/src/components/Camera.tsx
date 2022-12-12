@@ -14,17 +14,19 @@ import { useRef, useState, useCallback } from "react";
     //      //自動化する仕組み
     //  }
      return(
-         <div>
+         <div style={styles.component}>
              <div>
              <Webcam
                audio={false}
+            //    width={540}
+            //    height={360}
                width={540}
-               height={360}
+               height={460}
                ref={webcamRef}
                screenshotFormat="image/jpeg"
                videoConstraints={{
                  width: 720,
-                 height: 360,
+                 height: 540,
                  facingMode: "user"
                }}
              />
@@ -56,4 +58,10 @@ import { useRef, useState, useCallback } from "react";
          
      );
  };
+
+const styles : {[key: string]: React.CSSProperties} = {
+    component:{
+        // border: "solid"
+    }
+}
  export default Camera;

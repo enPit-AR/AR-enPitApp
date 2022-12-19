@@ -19,9 +19,9 @@ const GameScreen = () => {
                     <StopWatch/>
                 </div>
             </div>
-            <div>
+            {/* <div>
                 <JointCal />
-            </div>
+            </div> */}
         </div>
     );
   };

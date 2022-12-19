@@ -1,40 +1,27 @@
-import MySample_A from "../img/MySample_A.jpg";
+import MySample_A from "../../img/MySample_A.jpg";
 import poseDetection from "@tensorflow-models/pose-detection";
+import * as tf from '@tensorflow/tfjs-core';
+// Register one of the TF.js backends.
+import '@tensorflow/tfjs-backend-webgl';
+// import '@tensorflow/tfjs-backend-wasm';
 
-function JointCal() {
-    // const model = poseDetection.SupportedModels.MoveNet;
-    // async() => {
-  
-    //     //　検出器を生成
-    //     const detector = await poseDetection.createDetector(poseDetection.SupportedModels.MoveNet)
-       
-    //     // img要素を取得する 
-    //     const imageElement = document.getElementById('img')
+async function JointCal(): Promise<number> {
+    const detectorConfig = {modelType: poseDetection.movenet.modelType.SINGLEPOSE_LIGHTNING};
+    const detector = await poseDetection.createDetector(poseDetection.SupportedModels.MoveNet, detectorConfig);
+    const image = document.getElementById('img')!
+    const poses = await detector.estimatePoses(image)
+    console.log(poses[0].keypoints)
+    return 0;
         
-    //     // 姿勢推定を実行する
-    //     const poses = await detector.estimatePoses(imageElement)
-        
-    //     // 姿勢推定結果を出力する
-    //     console.log(poses[0].keypoints)
-        
-    //   }
-    return (
-        <div>
-            <div>関節点計算したい！</div>
-            <div style={styles.calcImage}>
-                <img id="img" alt="うわああ読み込まれないいい" src={MySample_A} width="400" height="500"/>
-            </div>   
-        </div>
-    );
 };
 
 
-const styles : {[key: string]: React.CSSProperties} = {
-    calcImage:{
-        // display: "none"
-    }
+// const styles : {[key: string]: React.CSSProperties} = {
+//     calcImage:{
+//         // display: "none"
+//     }
 
-};
+// };
 
 
 export default JointCal;

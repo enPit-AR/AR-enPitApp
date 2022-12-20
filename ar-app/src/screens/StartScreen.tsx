@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import JointCal from "../components/JointCal";
+import {JointCal} from "../components/JointCal";
 
 const StartScreen = () => {
     const navigate = useNavigate();

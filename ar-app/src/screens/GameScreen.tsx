@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import Camera from "../components/Camera";
 import StopWatch from "../components/StopWatch";
-import JointCal from "../components/JointCal";
+// import JointCal from "../components/JointCal";
 
 const GameScreen = () => {
     const navigate = useNavigate()

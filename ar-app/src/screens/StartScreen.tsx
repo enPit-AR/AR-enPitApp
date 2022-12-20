@@ -1,17 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import JointCal from "../components/JointCal";
+
 
 const StartScreen = () => {
     const navigate = useNavigate();
-    // const gameStart = () => {
-    //     const WAITTIME:number= 3;
-    //     const hoge = {
-    //         //3秒まつ感じの処理
-    //     };
-
-    //     navigate('/ResultScreen')
-    // };
-
     return (
         //CSSを整える
         <div>
@@ -24,7 +15,6 @@ const StartScreen = () => {
                     console.log('button is pushed')
                     navigate('/GameScreen')
                     // gameStart()
-                    JointCal()
                     }}>ゲームスタート</button>
             </div>
             {/* <div>

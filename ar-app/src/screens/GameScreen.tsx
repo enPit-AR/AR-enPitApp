@@ -29,10 +29,6 @@ const GameScreen : React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div>関節点計算したい！</div>
-                <div >
-                    <img id="img" alt="うわああ読み込まれないいい" src="MySample_A.jpg" width="400" height="500"/>
-            </div>   
         </div>
     );
   };

@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback } from "react";
  import Webcam from "react-webcam";
+ import JointCal from "./JointCal";
  
  function Camera() {
      const webcamRef = useRef<Webcam>(null);
@@ -10,6 +11,10 @@ import { useRef, useState, useCallback } from "react";
            setUrl(imageSrc);
          }
        }, [webcamRef]);
+    const captureCalc =() => {
+        capture();
+        JointCal();
+    }
     //  const autoCapture = () => {
     //      //自動化する仕組み
     //  }
@@ -32,7 +37,7 @@ import { useRef, useState, useCallback } from "react";
              />
              </div>
              <div>
-                 <button onClick={capture}>撮影</button>
+                 <button onClick={captureCalc}>撮影</button>
              </div>
              <div>
                  {url && (
@@ -49,7 +54,7 @@ import { useRef, useState, useCallback } from "react";
                          </button>
                      </div>
                      <div>
-                         <img src={url} alt="Screenshot" />
+                         <img id='img' src={url} alt="Screenshot" />
                      </div>
                  </>
                  )}

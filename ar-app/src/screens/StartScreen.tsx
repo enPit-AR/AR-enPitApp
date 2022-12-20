@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import JointCal from "../components/JointCal";
 
 const StartScreen = () => {
     const navigate = useNavigate();
@@ -23,6 +24,7 @@ const StartScreen = () => {
                     console.log('button is pushed')
                     navigate('/GameScreen')
                     // gameStart()
+                    JointCal()
                     }}>ゲームスタート</button>
             </div>
             {/* <div>

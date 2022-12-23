@@ -97,12 +97,9 @@ function Score(jointResult:poseDetection.Keypoint[]) {
 };
 
 async function Calculation() {
-  console.log("関節の位置");
   const jointResult = JointCal();
-  console.log("cosin")
-  const answerScore = Score(await jointResult);
-
-  return answerScore;
+  const cosinScore = Score(await jointResult);
+  return cosinScore;
 };
 
 

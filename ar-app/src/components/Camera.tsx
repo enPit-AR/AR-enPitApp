@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback } from "react";
  import Webcam from "react-webcam";
- import JointCal from "./JointCal";
+ import Calculation from "./JointCal";
  
  function Camera() {
      const webcamRef = useRef<Webcam>(null);
@@ -13,8 +13,9 @@ import { useRef, useState, useCallback } from "react";
        }, [webcamRef]);
     const captureCalc =() => {
         capture();
-        JointCal();
-    };
+        Calculation();
+    }
+
     //  const autoCapture = () => {
     //      //自動化する仕組み
     //  }

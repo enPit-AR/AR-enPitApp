@@ -15,12 +15,13 @@ import { useRef, useState, useCallback } from "react";
         capture();
         Calculation();
     }
+
     //  const autoCapture = () => {
     //      //自動化する仕組み
     //  }
      return(
          <div style={styles.component}>
-             <div>
+             <div style={styles.image}>
              <Webcam
                audio={false}
             //    width={540}
@@ -54,7 +55,7 @@ import { useRef, useState, useCallback } from "react";
                          </button>
                      </div>
                      <div>
-                         <img id='img' src={url} alt="Screenshot" />
+                         <img id='img' style={styles.image} src={url} alt="Screenshot" />
                      </div>
                  </>
                  )}
@@ -67,6 +68,9 @@ import { useRef, useState, useCallback } from "react";
 const styles : {[key: string]: React.CSSProperties} = {
     component:{
         // border: "solid"
+    },
+    image :{
+        transform: 'scale(-1,1)'
     }
 }
  export default Camera;

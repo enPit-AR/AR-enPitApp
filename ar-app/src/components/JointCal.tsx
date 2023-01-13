@@ -34,7 +34,7 @@ async function JointCal(): Promise<poseDetection.Keypoint[]> {
 
 //3点からなる2つのベクトルの間のcosθを計算する
 //3つの点を引数に指定し、端の点の要素-間の点の要素の演算でベクトルを2つ生成、
-//(各ベクトルの〇番目の要素がx、1番目の要素がyの値)
+//(各ベクトルの0番目の要素がx、1番目の要素がyの値)
 //その内積を求めて
 //ノルム(ベクトルの長さ)で割ることでcosを求めている
 function InnerProductCal(Joint1:any,CenterList:any,Joint2:any){

@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback } from "react";
  import Webcam from "react-webcam";
  import Calculation from "./JointCal";
+ import CorrectJudge from "./CorrectJudge";
  
  function Camera() {
      const webcamRef = useRef<Webcam>(null);
@@ -11,9 +12,10 @@ import { useRef, useState, useCallback } from "react";
            setUrl(imageSrc);
          }
        }, [webcamRef]);
-    const captureCalc =() => {
+    const captureCalc =async () => {
         capture();
-        Calculation();
+        var cosinResult=Calculation();
+        CorrectJudge(await cosinResult);
     }
 
     //  const autoCapture = () => {

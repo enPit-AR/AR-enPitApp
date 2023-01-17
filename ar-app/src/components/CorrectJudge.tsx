@@ -145,7 +145,7 @@ async function CorrectJudge(cosinScore:number[]){
         -0.000035897312229371134,-0.0001429448986202138, 
         -0.0001808234240694112,-0.00014399944439114006];
         
-    const S = [-0.00030355788549701353-0.0016117833536558506,
+    const S = [-0.00030355788549701353,-0.0016117833536558506,
         -0.001959417877583588,0.002646622944251545,
         -0.00003348898709895068,-0.000034714958437414855,
         0.0016985026802401144,-0.0017121583586372823,
@@ -222,7 +222,7 @@ async function CorrectJudge(cosinScore:number[]){
         Answer += (cosinScore[j]-A[j])**2;
     };
 
-    Answer = Answer**0.5;
+    // Answer = Answer**0.5;
 
     var AnswerLetter = AllCorrectAnswerLetter[0];
     
@@ -233,7 +233,7 @@ async function CorrectJudge(cosinScore:number[]){
             NowAnswer += (cosinScore[j]-AllCorrectAnswer[i][j])**2;
         };
 
-        NowAnswer = NowAnswer**0.5;
+        // NowAnswer = NowAnswer**0.5;
         
         if(NowAnswer<Answer){
             Answer=NowAnswer;

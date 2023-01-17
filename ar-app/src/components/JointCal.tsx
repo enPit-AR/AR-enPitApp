@@ -41,8 +41,8 @@ function InnerProductCal(Joint1:any,CenterList:any,Joint2:any){
     const vector1:number[] = [Joint1["x"]-CenterList["x"],Joint1["y"]-CenterList["y"]];
     const vector2:number[] = [Joint2["x"]-CenterList["x"],Joint2["y"]-CenterList["y"]];
     const innerProduct:number = vector1[0]*vector2[0] + vector1[1]*vector2[1];
-    const nolm1:number = vector1[0]*vector1[0] + vector1[1]*vector1[1];
-    const nolm2:number = vector2[0]*vector2[0] + vector2[1]*vector2[1];
+    const nolm1:number = (vector1[0]*vector1[0] + vector1[1]*vector1[1])**0.5;
+    const nolm2:number = (vector2[0]*vector2[0] + vector2[1]*vector2[1])**0.5;
     const cosin:number = innerProduct/(nolm1*nolm2);
     return cosin;
   }

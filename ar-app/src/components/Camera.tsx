@@ -89,7 +89,7 @@ import { useRef, useState, useCallback } from "react";
     const TIME: number = 10;
   	 const [ isAutoStart, setIsAutoStart ] = useState<boolean>(false); //add
      const [countdown, setCountdown] = useState<number>(TIME); //add
-     const [delay, setDelay] = useState<number>(1) //add
+     const [delay] = useState<number>(1) //add
   	 const captureStop = () => {
         setIsAutoStart(false)
     } //add
